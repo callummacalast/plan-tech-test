@@ -55,7 +55,7 @@ Backend architecture makes use of design patterns to ensure scaleable code. I ma
 
 Frontend has been built roughly following the atomic design approach, you could argue it’s slightly overkill for this project, but it promotes the reusable nature of the components. This project houses a simple fetcher helper which can be used to make fetch requests. The project utilises eslint rules to reduce developer mistakes and typed correctness. 
 
-All methods in the application use GET, there didn’t seem the need to add the ability to POST, the search functionality could have accepted a POST request, but as it is only a string and no data insertion was happening it seemed suffice.
+All methods in the application use GET, there didn’t seem to be the need to add the ability to POST, the search functionality could have accepted a POST request, but as it is only a string and no data insertion was happening it seemed suffice.
 
 
 
