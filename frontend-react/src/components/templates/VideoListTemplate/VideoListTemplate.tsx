@@ -22,7 +22,7 @@ const VideoListTemplate = ({ videos }: VideoListTemplateProps) => {
           </div>
         )}
 
-        {isLoading || !videos ? (
+        {isLoading || !videos && !error ? (
           <Grid>
             {emptyState.map((_) => (
               <SkeletonCard key={_} />
