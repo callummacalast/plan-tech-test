@@ -31,10 +31,12 @@ class VideoRepository implements VideoRepositoryInterface
             ->when($search, fn($query) => $query
                 ->where('title', 'like', "%$search%")
                 ->orWhere('description', 'like', "%$search%"))
+            ->where('live', true)
             ->get();
 
+        // only get unique videos
         $uniqueVideos = $videos->unique(function ($video) {
-            return $video->title . $video->author;
+            return $video->title . $video->author . $video->video_url;
         });
 
         return $this->videoDtoFactory->fromCollection($uniqueVideos);
